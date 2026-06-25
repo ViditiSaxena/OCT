@@ -1,0 +1,27 @@
+{
+  "name": "ops-control-tower",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:share": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:share": "vite preview --host",
+    "deploy:vercel": "node scripts/deploy-public.mjs",
+    "deploy:netlify": "npm run build && npx netlify deploy --prod --dir=dist"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "@vitejs/plugin-react": "^4.4.0",
+    "playwright": "^1.60.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^6.3.0"
+  }
+}

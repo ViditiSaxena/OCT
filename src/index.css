@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", "Source Sans Pro", -apple-system, "Segoe UI", sans-serif;
+
+  /* Neutral scale — from Ops Ctrl Tower Figma */
+  --color-canvas: #fbfbfb; /* neutral-10 */
+  --color-chip: #f6f7f7; /* neutral-20 */
+  --color-line-soft: #eceeee; /* neutral-30 */
+  --color-line: #e3e4e5; /* neutral-40 */
+  --color-line-strong: #d7d9db; /* neutral-50 */
+  --color-line-bold: #c2c6ca; /* neutral-60 */
+  --color-faint: #8b949b;
+  --color-muted: #5d6871; /* neutral-110 */
+  --color-slate: #35424d; /* neutral-120 */
+  --color-ink: #20282e; /* neutral-140 */
+
+  /* Accent */
+  --color-blue: #1c40ca; /* blue-80 */
+  --color-blue-deep: #15309b;
+  --color-blue-soft: #e1e6ff;
+  --color-blue-wash: #f3f5ff;
+
+  /* Semantic */
+  --color-green: #007a39; /* green-60 */
+  --color-green-soft: #dafbe8; /* green-20 */
+  --color-green-line: #8bdfb2; /* green-40 */
+  --color-orange: #e66605; /* orange-60 */
+  --color-orange-soft: #fdf0e3;
+  --color-orange-line: #f5c08c;
+  --color-red: #990800; /* red-80 */
+  --color-red-soft: #fdeae8;
+  --color-red-line: #f0b3ae;
+
+  --shadow-card: 0px 2px 1.5px rgba(114, 114, 114, 0.25);
+  --shadow-pop: 0px 8px 24px rgba(32, 40, 46, 0.16), 0px 2px 6px rgba(32, 40, 46, 0.1);
+
+  --radius-card: 4px;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-slate);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-blue-soft);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-in {
+  animation: fadeSlideIn 160ms ease-out;
+}
+
+@keyframes planningFutureGlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.planning-card-future {
+  background-size: 200% 200%;
+  animation: planningFutureGlow 12s ease-in-out infinite;
+}
